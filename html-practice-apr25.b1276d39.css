@@ -1,2 +1,111 @@
+* {
+  box-sizing: border-box;
+}
 
+html {
+  font-family: Arial, sans-serif;
+}
+
+body {
+  margin: 0;
+}
+
+.people {
+  --columns-count: 2;
+  grid-template-columns: repeat(var(--columns-count), 220px);
+  justify-content: center;
+  gap: 40px 10px;
+  margin-inline: auto;
+  padding: 30px 35px;
+  display: grid;
+}
+
+@media (width >= 1000px) {
+  .people {
+    --columns-count: 4;
+    padding-inline: 55px;
+  }
+}
+
+.person {
+  border-radius: 10px;
+  width: 220px;
+  padding: 10px;
+  transition: transform .3s;
+}
+
+.person__photo-wrapper {
+  width: 200px;
+  height: 200px;
+  margin-bottom: 8px;
+  position: relative;
+}
+
+.person__photo {
+  border-radius: 50%;
+  width: 100%;
+  transition: border-radius .3s;
+}
+
+.person__rank {
+  color: #8b0000;
+  background-color: #fff;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  width: 32px;
+  height: 32px;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 100%;
+  display: flex;
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+}
+
+.person__details {
+  flex-direction: column;
+  align-items: center;
+  display: flex;
+}
+
+.person__name {
+  letter-spacing: 0%;
+  color: #2f4f4f;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 100%;
+}
+
+.person__extra {
+  opacity: 0;
+  visibility: hidden;
+  justify-content: center;
+  align-items: center;
+  min-height: 25px;
+  margin-top: 9px;
+  font-size: 18px;
+  transition: opacity .3s;
+  display: flex;
+}
+
+.person:hover .person__extra {
+  opacity: 1;
+  visibility: visible;
+}
+
+.person:hover {
+  background-color: #eee;
+  transform: scale(1.2);
+}
+
+.person:hover .person__photo {
+  border-radius: 60px;
+}
+
+.person__sport {
+  margin-right: 5px;
+}
 /*# sourceMappingURL=html-practice-apr25.b1276d39.css.map */
